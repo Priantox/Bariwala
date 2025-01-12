@@ -1,0 +1,48 @@
+.property-types-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.featured{
+  font-size: 1.5rem;
+}
+
+.property-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.property-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.property-card:hover {
+  transform: scale(1.05);
+}
+
+.property-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #ff6347;
+  /* Adjust color for each icon */
+}
+
+.property-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.property-card p {
+  font-size: 14px;
+  color: #555;
+}
