@@ -1,8 +1,11 @@
 import React from 'react'
+import CardList from '../../Cards/CardList'
 
 function Buy() {
   return (
-    <div>Buy</div>
+    <div>
+      <CardList />
+    </div>
   )
 }
 
