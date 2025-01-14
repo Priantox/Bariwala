@@ -11,9 +11,7 @@ import Explore from './Components/InsideNavbar/Explore/Explore.jsx';
 import Contact from './Components/InsideNavbar/Contact/Contact.jsx';
 import SignIn from './Components/InsideNavbar/SignIn/SIgnIn.jsx';
 import SignUp from './Components/InsideNavbar/SignUp/SignUp.jsx';
-import Buy from './Components/InsideNavbar/Buy/Buy.jsx';
-import Rent from './Components/InsideNavbar/Rent/Rent.jsx';
-import Sell from './Components/InsideNavbar/Sell/Sell.jsx';
+import Add_property from './Components/InsideNavbar/Add_property/Add_property.jsx';
 
 
 
@@ -33,18 +31,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/buy",
-        element: <Buy/>
-      },
-
-      {
-        path: "/sell",
-        element: <Sell/>
-      },
-
-      {
-        path: "/rent",
-        element: <Rent/>
+        path: "/addproperty",
+        element: <Add_property/>,
       },
 
       {

@@ -2,7 +2,10 @@ import React,{useState} from "react";
 import Background from "./Components/Background/Background";
 import Navbar from "./Components/Navbar/Navbar";
 import SearchBar from "./Components/SearchBar/SearchBar";
-import PropertyTypes from "./Components/PropertyTypes/PropertyTypes";
+import PropertyButtons from "./Components/PropertyButtons/PropertyButtons";
+
+import PropertyCard from "./Components/PropertyCard/PropertyCard";
+
 
 const App = ()=> {
 
@@ -14,7 +17,10 @@ const App = ()=> {
       <Background playStatus={playStatus} heroCount={heroCount}/>
       <Navbar/>
       <SearchBar />
-      <PropertyTypes/>
+      <br />
+      <PropertyButtons/>
+      <br /><br />
+      <PropertyCard/>
     </div>
   )
 }

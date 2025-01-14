@@ -1,5 +1,6 @@
 import './Navbar.css';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import 'boxicons';
 
 const Navbar = () => {
     const location = useLocation();
@@ -12,7 +13,7 @@ const Navbar = () => {
                     <Link to="/">Bariwala</Link>
                 </div>
                 <ul className="nav-menu">
-                    <li>
+                    {/* <li>
                         <Link to="/buy" className={isHomePage ? "home-link" : "other-link"}>Buy</Link>
                     </li>
                     <li>
@@ -20,6 +21,9 @@ const Navbar = () => {
                     </li>
                     <li>
                         <Link to="/sell" className={isHomePage ? "home-link" : "other-link"}>Sell</Link>
+                    </li> */}
+                    <li>
+                        <Link to="/addproperty" className={isHomePage ? "home-link" : "other-link"}>Add Property</Link>
                     </li>
                     <li>
                         <Link to="/about" className={isHomePage ? "home-link" : "other-link"}>About</Link>
@@ -30,6 +34,7 @@ const Navbar = () => {
                     <li>
                         <Link to="/contact" className={isHomePage ? "home-link" : "other-link"}>Contact</Link>
                     </li>
+                    <box-icon name='bell' type='solid' animation='tada' rotate='90' color='#ffffff' ></box-icon>
                     <li className="nav-contact">
                         <Link to="/signin">Sign In</Link>
                     </li>

@@ -31,6 +31,12 @@ const properties = [
     description: "2 Beds • 1 Bath • 760 Sq Ft",
     address: "6026 41st Ave NE, Seattle, WA 98115",
   },
+  {
+    image: card4,
+    price: "$599,950",
+    description: "2 Beds • 1 Bath • 760 Sq Ft",
+    address: "6026 41st Ave NE, Seattle, WA 98115",
+  },
 ];
 
 const CardList = () => {

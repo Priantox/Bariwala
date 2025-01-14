@@ -87,3 +87,26 @@
 .line {
   word-spacing: 10px;
 }
+
+.search-input:hover {
+  background-color: #f0f0f0; /* Slightly lighter background */
+}
+
+@media (max-width: 768px) {
+  .search-bar-container {
+    height: auto;
+    padding: 10px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .dropdown,
+  .search-input {
+    width: 100%; /* Full-width dropdown and input on small screens */
+    border-radius: 20px;
+  }
+}

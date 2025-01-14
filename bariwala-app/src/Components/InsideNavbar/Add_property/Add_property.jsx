@@ -1,19 +1,21 @@
 import React from "react";
-import "./PropertyTypes.css";
+import "./Add_property.css";
 
 const propertyTypes = [
   { icon: "🏡", title: "Family House", count: 155 },
-  { icon: "🏠", title: "Mini room", count: 122 },
+  { icon: "🏠", title: "Bachelor", count: 122 },
   { icon: "🏢", title: "Apartment", count: 300 },
   { icon: "🏤", title: "Office & Studio", count: 80 },
+  { icon: "🏨", title: "Hostel", count: 89 },
+  { icon: "🏬", title: "Shop", count: 80 },
 ];
 
-const PropertyTypes = () => {
+const Add_property = () => {
   return (
     <div className="property-types-container">
       <br />
       <br />
-      <h1 className="featured">Featured Property Types</h1>
+      <h1 className="featured">Submit Property Types</h1>
 
       <div className="property-grid">
         {propertyTypes.map((property, index) => (
@@ -28,4 +30,4 @@ const PropertyTypes = () => {
   );
 };
 
-export default PropertyTypes;
+export default Add_property;
