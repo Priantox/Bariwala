@@ -15,6 +15,28 @@
     font-family: Arial, sans-serif; 
 }
 
+.nav.active {
+    background-color: white; 
+    border-bottom: 2px solid #4F46E5; 
+    position: fixed; 
+    top: 0; 
+    z-index: 2; 
+    width: 100%; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav.active .home-link,
+.nav.active .other-link {
+    color: black; 
+    transition: color 0.3s ease; 
+}
+
+.nav.active .home-link:hover,
+.nav.active .other-link:hover {
+    text-decoration: underline;
+    text-decoration-color: black; 
+}
+
 .nav-logo{
     font-family: 'Outfit', sans-serif; 
     font-size: 40px; 
