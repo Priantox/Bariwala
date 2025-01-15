@@ -2,17 +2,17 @@ import React from "react";
 import 'boxicons/css/boxicons.min.css';
 
 const propertyTypes = [
-  { icon: "home", title: "Family", color: "#000000" },
-  { icon: "building-house", title: "Bachelor", color: "#000000" },
-  { icon: "building", title: "Office", color: "#000000" },
-  { icon: "home-alt", title: "Sublet", color: "#000000" },
-  { icon: "hotel", title: "Hostel", color: "#000000" },
-  { icon: "store-alt", title: "Rent", color: "#000000" },
+  { icon: "home", title: "Buy", color: "#000000" },
+  { icon: "home-alt", title: "Rent", color: "#000000" },
+  { icon: "building", title: "Sell", color: "#000000" },
+  // { icon: "home-alt", title: "Sublet", color: "#000000" },
+  // { icon: "hotel", title: "Hostel", color: "#000000" },
+  // { icon: "store-alt", title: "Rent", color: "#000000" },
 ];
 
 const PropertyButtons = () => {
   return (
-    <div className="relative z-10 flex justify-center gap-4 mt-6">
+    <div className="relative z-10 flex justify-center gap-10 mt-6">
       {propertyTypes.map((property, index) => (
         <button
           key={index}

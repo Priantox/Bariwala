@@ -17,9 +17,9 @@ const App = ()=> {
       <Background playStatus={playStatus} heroCount={heroCount}/>
       <Navbar/>
       <SearchBar />
-      <br />
-      <PropertyButtons/>
       <br /><br />
+      <PropertyButtons/>
+      <br /><br /> 
       <PropertyCard/>
     </div>
   )
