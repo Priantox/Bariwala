@@ -34,6 +34,9 @@ const Navbar = () => {
                         <Link to="/addproperty" className={isHomePage ? "home-link" : "other-link"}>Add Property</Link>
                     </li>
                     <li>
+                        <Link to="/addproperty" className={isHomePage ? "home-link" : "other-link"}>Add Property</Link>
+                    </li>
+                    <li>
                         <Link to="/about" className={isHomePage ? "home-link" : "other-link"}>About</Link>
                     </li>
                     <li>

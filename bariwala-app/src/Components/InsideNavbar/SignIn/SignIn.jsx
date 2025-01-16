@@ -6,7 +6,8 @@ import { FcGoogle } from "react-icons/fc";
 function SignIn() {
   return (
     <div className="flex justify-center items-center min-h-[100vh] bg-gray-100">
-      <div className="absolute top-3 left-16 font-outfit text-[37px] font-semibold text-purpleCustom flex items-center gap-2">
+      <div className="absolute top-3 left-16 font-outfit text-[37px] font-semibold
+                     text-purpleCustom flex items-center gap-2">
         <Link to="/">Bariwala</Link>
       </div>
 
@@ -24,7 +25,8 @@ function SignIn() {
             id="email"
             type="email"
             placeholder="Enter email"
-            className="w-full p-3 text-sm border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2
+            className="w-full p-3 text-sm border border-gray-300 rounded-lg shadow-sm 
+                      focus:outline-none focus:ring-2
                       focus:ring-indigo-500 focus:border-indigo-500"
           />
         </div>
@@ -38,7 +40,8 @@ function SignIn() {
             id="password"
             type="password"
             placeholder="Enter password"
-            className="w-full p-3 text-sm border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2
+            className="w-full p-3 text-sm border border-gray-300 rounded-lg 
+                      shadow-sm focus:outline-none focus:ring-2
                      focus:ring-indigo-500 focus:border-indigo-500"
           />
         </div>
