@@ -28,7 +28,7 @@ const SearchBar = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Place, Neighborhood, School or Agent"
+            placeholder="📍Place, Neighborhood, School or Agent"
           />
         </div>
       </div>

@@ -31,7 +31,7 @@ const Navbar = () => {
                 </div>
                 <ul className="nav-menu">
                     <li>
-                        <Link to="/addproperty" className={isHomePage ? "home-link" : "other-link"}>Add Property</Link>
+                        <Link to="/dashboard" className={isHomePage ? "home-link" : "other-link"}>Dashboard</Link>
                     </li>
                     <li>
                         <Link to="/addproperty" className={isHomePage ? "home-link" : "other-link"}>Add Property</Link>

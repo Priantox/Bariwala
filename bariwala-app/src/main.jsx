@@ -9,9 +9,10 @@ import NotFound from './Components/InsideNavbar/NotFound/NotFound.jsx';
 import About from './Components/InsideNavbar/About/About.jsx';
 import Explore from './Components/InsideNavbar/Explore/Explore.jsx';
 import Contact from './Components/InsideNavbar/Contact/Contact.jsx';
-import SignIn from './Components/InsideNavbar/SignIn/SIgnIn.jsx';
+import SignIn from './Components/InsideNavbar/SignIn/SignIn.jsx';
 import SignUp from './Components/InsideNavbar/SignUp/SignUp.jsx';
 import Add_property from './Components/InsideNavbar/Add_property/Add_property.jsx';
+import Dashboard from './Components/InsideNavbar/Dashboard/Dashboard.jsx';
 
 
 
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFound/>,
+      },
+
+      {
+        path: "/dashboard",
+        element: <Dashboard/>,
       },
 
       {
