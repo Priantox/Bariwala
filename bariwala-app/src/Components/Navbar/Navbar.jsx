@@ -57,6 +57,16 @@ const Navbar = () => {
           <Link to="/">Bariwala</Link>
         </div>
         <ul className="nav-menu">
+
+        <li>
+            <Link
+              to="/profile"
+              className={isHomePage ? "home-link" : "other-link"}
+            >
+              Profile
+            </Link>
+          </li>
+
           <li>
             <Link
               to="/dashboard"
@@ -131,9 +141,7 @@ const Navbar = () => {
                   {/* Notifi 2 */}
                   <div className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
                     <p className="text-sm font-semibold">Kokila behen</p>
-                    <p className="text-xs text-gray-500">
-                      wants to rent
-                    </p>
+                    <p className="text-xs text-gray-500">wants to rent</p>
                   </div>
                   <div className="border-t border-gray-400"></div>
                   {/* Notifi 3 */}

@@ -13,6 +13,8 @@ import SignIn from './Components/InsideNavbar/SignIn/SignIn.jsx';
 import SignUp from './Components/InsideNavbar/SignUp/SignUp.jsx';
 import Add_property from './Components/InsideNavbar/Add_property/Add_property.jsx';
 import Dashboard from './Components/InsideNavbar/Dashboard/Dashboard.jsx';
+import PropertyInfo from './Components/PropertyInfo/PropertyInfo.jsx';
+import Profile from './Components/Profile/Profile.jsx';
 
 
 
@@ -54,6 +56,16 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>,
+      },
+
+      {
+        path: "/propertyinfo",
+        element: <PropertyInfo/>,
+      },
+
+      {
+        path: "/profile",
+        element: <Profile/>,
       },
     ]
   },
