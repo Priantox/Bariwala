@@ -9,6 +9,18 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      setIsLoggedIn(true);
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      setUserName(userData?.name || "User");
+    }
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,8 +69,7 @@ const Navbar = () => {
           <Link to="/">Bariwala</Link>
         </div>
         <ul className="nav-menu">
-
-        <li>
+          <li>
             <Link
               to="/profile"
               className={isHomePage ? "home-link" : "other-link"}
@@ -66,7 +77,6 @@ const Navbar = () => {
               Profile
             </Link>
           </li>
-
           <li>
             <Link
               to="/dashboard"
@@ -118,8 +128,6 @@ const Navbar = () => {
               onClick={toggleDropdown}
               className="cursor-pointer"
             ></box-icon>
-
-            {/* Notification Dropdown */}
             {isDropdownOpen && (
               <div
                 ref={dropdownRef}
@@ -128,36 +136,54 @@ const Navbar = () => {
                 <div className="bg-white px-4 py-2 rounded-t-lg flex justify-between items-center">
                   <span className="font-bold text-lg">Notifications</span>
                 </div>
-
                 <div className="bg-gray-200">
-                  {/* Notifi 1 */}
                   <div className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                    <p className="text-sm font-semibold">Rohimuddin</p>
-                    <p className="text-xs text-gray-500">
-                      wants to buy your house
-                    </p>
+                    <p className="text-sm font-semibold">Notification 1</p>
                   </div>
                   <div className="border-t border-gray-400"></div>
-                  {/* Notifi 2 */}
                   <div className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                    <p className="text-sm font-semibold">Kokila behen</p>
-                    <p className="text-xs text-gray-500">wants to rent</p>
-                  </div>
-                  <div className="border-t border-gray-400"></div>
-                  {/* Notifi 3 */}
-                  <div className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                    <p className="text-sm font-semibold">Nurulullah</p>
-                    <p className="text-xs text-gray-500">
-                      Posted 2 comments on your house
-                    </p>
+                    <p className="text-sm font-semibold">Notification 2</p>
                   </div>
                 </div>
               </div>
             )}
           </div>
-          <li className="nav-contact">
-            <Link to="/signin">Sign In</Link>
-          </li>
+
+          {isLoggedIn ? (
+            <li className="nav-profile">
+              <div className="relative">
+                <img
+                  src="/path/to/profile-image.png"
+                  alt="Profile"
+                  className="rounded-full w-8 h-8 cursor-pointer"
+                  onClick={toggleDropdown}
+                />
+                {isDropdownOpen && (
+                  <div
+                    ref={dropdownRef}
+                    className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg z-10"
+                  >
+                    <Link
+                      to="/profile"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      My Profile
+                    </Link>
+                    <button
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            </li>
+          ) : (
+            <li className="nav-contact">
+              <Link to="/signin">Sign In</Link>
+            </li>
+          )}
         </ul>
       </div>
       <Outlet />
