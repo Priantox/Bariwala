@@ -46,7 +46,7 @@ const CardList = () => {
 
       {properties.map((property, index) => (
         <Card
-          key={index}
+          key={adID}
           image={property.image}
           price={property.price}
           description={property.description}

@@ -6,7 +6,7 @@ const PropertyInfo = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000")
+      .get("http://localhost:3000/ad/property/id")
       .then((response) => setProperty(response.data))
       .catch((error) => console.error("Error fetching property data:", error));
   }, []);
