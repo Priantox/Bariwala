@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const CardSection = ({ title, data }) => (
   <>
@@ -30,52 +31,77 @@ const CardSection = ({ title, data }) => (
 const RentList = ({ rentData }) => (
   <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
     <h2 className="text-2xl font-bold mb-4">Rent List</h2>
-    <ul className="list-disc pl-6">
-      {rentData.map((entry, index) => (
-        <li key={index} className="mb-2">
-          <span className="font-semibold">{entry.name}:</span> {entry.hasPaid ? "Has paid rent" : "Has not paid rent"}
-        </li>
-      ))}
-    </ul>
+    <div className="overflow-x-auto">
+      <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+        <thead>
+          <tr className="bg-gray-100 text-left text-gray-700">
+            <th className="px-4 py-2">Tenant Name</th>
+            <th className="px-4 py-2">Status</th>
+            <th className="px-4 py-2">Payment Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rentData.map((entry, index) => (
+            <tr
+              key={index}
+              className={`border-b ${
+                index % 2 === 0 ? "bg-gray-50" : "bg-white"
+              }`}
+            >
+              <td className="px-4 py-2">{entry.name}</td>
+              <td className="px-4 py-2">
+                <span
+                  className={`px-3 py-1 rounded-full text-sm ${
+                    entry.hasPaid
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {entry.hasPaid ? "Paid" : "Not Paid"}
+                </span>
+              </td>
+              <td className="px-4 py-2 text-gray-600">
+                {entry.paymentDate || "N/A"}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </div>
 );
 
 const Dashboard = () => {
-  const data = [
-    {
-      title: "Sold",
-      count: 425,
-      description: "Total Property Brought",
-      color: "bg-blue-500",
-    },
-    {
-      title: "Rented",
-      count: 185,
-      description: "Total Rented",
-      color: "bg-red-500",
-    },
-    {
-      title: "Available",
-      count: 252,
-      description: "Total Sold",
-      color: "bg-purple-500",
-    },
-  ];
+  const [cardData, setCardData] = useState([]);
+  const [rentData, setRentData] = useState([]);
 
-  const rentData = [
-    { name: "John Doe", hasPaid: true },
-    { name: "Jane Smith", hasPaid: false },
-    { name: "Michael Johnson", hasPaid: true },
-    { name: "Emily Davis", hasPaid: false },
-  ];
+  useEffect(() => {
+    axios
+      .get("https://locahost:3000") 
+      .then((response) => {
+        setCardData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching card data:", error);
+      });
+
+    axios
+      .get("https://localhost:3000") 
+      .then((response) => {
+        setRentData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching rent data:", error);
+      });
+  }, []);
 
   return (
     <>
-      <CardSection title="Property List" data={data} />
-      {/* Add a smaller margin between sections */}
+      <CardSection title="Property List" data={cardData} />
       <div className="h-8"></div>
-      <CardSection title="Flats" data={data} />
-      <br /><br />
+      <CardSection title="Flats" data={cardData} />
+      <br />
+      <br />
       <RentList rentData={rentData} />
     </>
   );

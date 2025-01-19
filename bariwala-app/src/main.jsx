@@ -16,8 +16,6 @@ import Dashboard from './Components/InsideNavbar/Dashboard/Dashboard.jsx';
 import PropertyInfo from './Components/PropertyInfo/PropertyInfo.jsx';
 import Profile from './Components/Profile/Profile.jsx';
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
